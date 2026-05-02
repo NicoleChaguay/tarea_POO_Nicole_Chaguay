@@ -1,4 +1,13 @@
-# Explicación del Sistema de Vehículos en Python
+# Univerdad de Guayaquil
+
+# Facultad de Ciencias Administrativas
+
+# "Programacion Orienta a Objetos"
+
+## Docente: Jose Cordova Aragundi.
+## Estudiante: Nicole Chaguay Alejandro.
+
+# Explicación del Sistema de Vehículos en Python.
 
 ## 1. Visión general
 Este programa implementa un modelo
@@ -9,127 +18,124 @@ Este programa implementa un modelo
 
 El objetivo es representar distintos tipos de vehículos (automóviles y motocicletas) junto con sus características y comportamientos.
 
----
+
 
 ## 2. Clase base: Vehículo
-La clase "Vehiculo" es la base del sistema. Define las características comunes que tendrán todos los vehículos.
+La clase "Vehículo" es la base del sistema. Define las características comunes que tendrán todos los vehículos.
 
-### Atributos
+### Atributos.
 - Marca
 - Modelo
 - Año
 - Motor (objeto de otra clase)
 
-Estos atributos se definen como **privados** (con guion `_`) para protegerlos y evitar acceso directo.
+Estos atributos se definen como **privados** (con guion "_") para protegerlos y evitar acceso directo.
 
-### Propiedades (getters y setters)
-Se utilizan decoradores como `@property` para:
+### Propiedades (getters y setters).
+Se utilizan decoradores como "@property" para:
 - Obtener el valor de los atributos.
 - Modificarlos de forma controlada.
 
-Esto permite aplicar validaciones en el futuro sin cambiar el resto del código.
+Esto nos permite aplicar validaciones en el futuro sin cambiar el resto del código.
 
-### Métodos
-- **encender()**: devuelve un mensaje indicando que el vehículo está encendido.
-- **apagar()**: devuelve un mensaje indicando que el vehículo está apagado.
-- **__str__()**: permite mostrar el objeto como texto legible.
+### Métodos.
+- **encender()**: Devuelve un mensaje indicando que el vehículo está encendido.
+- **apagar()**: Devuelve un mensaje indicando que el vehículo está apagado.
+- **__str__()**: Permite mostrar el objeto como texto legible.
 
----
 
-## 3. Clase Automóvil
-Es una clase derivada de `Vehiculo`, lo que significa que **hereda** todos sus atributos y métodos.
 
-### Característica adicional
-- Número de puertas
+## 3. Clase Automóvil.
+Es una clase derivada de "Vehículo", lo que significa que **hereda** todos sus atributos y métodos.
 
-### Métodos propios
-- **abrir_maletero()**: simula abrir el maletero.
-- **tocar_claxon()**: simula el sonido del claxon.
+### Característica adicional.
+- Número de puertas.
+
+### Métodos propios.
+- **abrir_maletero()**: Simula abrir el maletero.
+- **tocar_claxon()**: Simula el sonido del claxon.
 
 ### Sobrescritura de método
-- Redefine `__str__()` para incluir:
-  - Información del vehículo base
-  - Número de puertas
+- Redefine "__str__()" para incluir:
+  - Información del vehículo base.
+  - Número de puertas.
 
 Esto es un ejemplo de **polimorfismo**, ya que cambia el comportamiento de un método heredado.
 
----
 
-## 4. Clase Motocicleta
-También hereda de `Vehiculo`, pero representa otro tipo de transporte.
 
-### Característica adicional
+## 4. Clase Motocicleta.
+También hereda de "Vehiculo", pero representa otro tipo de transporte.
+
+### Característica adicional.
 - Cilindraje (capacidad del motor)
 
-### Métodos propios
+### Métodos propios.
 - **hacer_caballito()**: acción típica de motocicletas.
 - **usar_patada_arranque()**: simula el arranque manual.
 
-### Sobrescritura
-- Redefine `__str__()` para incluir el cilindraje.
+### Sobrescritura.
+- Redefine "__str__()" para incluir el cilindraje.
 
----
 
-## 5. Clase Motor
+
+## 5. Clase Motor.
 Esta clase representa el motor de un vehículo.
 
-### Atributos
-- Tipo (gasolina, diésel, eléctrico)
-- Potencia (en caballos de fuerza)
+### Atributos.
+- Tipo (gasolina, diésel, eléctrico).
+- Potencia (en caballos de fuerza).
 
-### Métodos
+### Métodos.
 - **encender_motor()** y **detener_motor()**: simulan su funcionamiento.
 - **__str__()**: permite mostrar la información del motor como texto.
 
-### Relación importante
+### Relación importante.
 Aquí se aplica **composición**, ya que:
-- Un vehículo *tiene un* motor
-- El motor es un objeto independiente que se pasa al vehículo
+- Un vehículo *tiene un* motor.
+- El motor es un objeto independiente que se pasa al vehículo.
 
----
 
-## 6. Creación de objetos
+
+## 6. Creación de objetos.
 Se crean:
-- Varios motores con diferentes características
-- Vehículos (automóviles y motocicletas) que usan esos motores
+- Varios motores con diferentes características.
+- Vehículos (automóviles y motocicletas) que usan esos motores.
 
 Esto demuestra cómo se pueden reutilizar objetos dentro de otros.
 
----
 
-## 7. Ejecución de métodos
+
+## 7. Ejecución de métodos.
 El programa llama a distintos métodos para simular acciones:
-- Encender vehículos
-- Usar funciones específicas (maletero, claxon, caballito, etc.)
+- Encender vehículos.
+- Usar funciones específicas (maletero, claxon, caballito, etc.).
 
 Esto muestra el comportamiento dinámico de cada tipo de objeto.
 
----
 
-## 8. Impresión de objetos
-Se imprimen los vehículos usando `print()`.
 
-Gracias al método `__str__()`:
-- La salida es clara y entendible
-- Se muestra información completa del vehículo y su motor
+## 8. Impresión de objetos.
+Se imprimen los vehículos usando "print()".
 
----
+Gracias al método "__str__()":
+- La salida es clara y entendible.
+- Se muestra información completa del vehículo y su motor.
 
-## 9. Fecha y hora
-Se utiliza `datetime.now()` para mostrar el momento exacto de ejecución del programa.
 
----
 
-## 10. Conclusión
-Este programa demuestra correctamente varios pilares de la POO:
-- Reutilización de código mediante herencia
-- Protección de datos con encapsulación
-- Flexibilidad mediante polimorfismo
-- Relación entre objetos usando composición
+## 9. Fecha y hora.
+Se utiliza "datetime.now()" para mostrar el momento exacto de ejecución del programa.
 
-Es una base sólida para sistemas más complejos como:
-- Gestión de vehículos
-- Simuladores
-- Sistemas de concesionarios
+
+
+## 10. Conclusión.
+Este programa nos demuestra correctamente varios pilares de la POO:
+- Reutilización de código mediante herencia.
+- Protección de datos con encapsulación.
+- Flexibilidad mediante polimorfismo.
+- Relación entre objetos usando composición.
+
+
 
 ![Auto](image.png)
